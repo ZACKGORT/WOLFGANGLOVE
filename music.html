@@ -65,7 +65,7 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 #chpill{font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:20px;border:1px solid transparent;color:var(--ink3);transition:all .15s;}
 #chpill.on{border-color:var(--sp-green);color:var(--sp-green);}
 
-/* ── NOW PLAYING BAR (slim strip — click to open player) ── */
+/* ── NOW PLAYING BAR ── */
 #nowplaying{
   position:fixed;bottom:calc(40px + env(safe-area-inset-bottom,0px));
   left:0;right:0;height:54px;
@@ -106,7 +106,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 #player.open{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0);}
 #player.collapsed #player-main{display:none;}
 
-/* handle */
 #player-handle{
   height:34px;display:flex;align-items:center;justify-content:space-between;
   padding:0 12px;cursor:grab;border-bottom:1px solid rgba(255,255,255,.06);
@@ -121,12 +120,10 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 .ph-btn{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:12px;padding:3px 5px;line-height:1;transition:color .15s;}
 .ph-btn:hover{color:#fff;}
 
-/* art */
 #player-art{width:100%;aspect-ratio:1/1;max-height:200px;overflow:hidden;background:var(--sp-card);position:relative;}
 #player-art img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .3s;}
 #player-art-wash{position:absolute;inset:0;background:var(--mood-wash);transition:background 1.2s;pointer-events:none;}
 
-/* info */
 #player-main{padding:14px 16px 0;}
 #player-track{font-family:var(--body);font-size:19px;font-weight:600;line-height:1.2;color:#fff;margin-bottom:2px;}
 #player-artist-line{font-size:7.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:5px;}
@@ -136,13 +133,12 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 .pmood:hover{border-color:var(--b2);color:var(--ink2);}
 .pmood.on{border-color:var(--sp-green);color:var(--sp-green);background:rgba(29,185,84,.1);}
 
-/* progress */
 #player-prog-wrap{padding:0 16px 8px;}
 #player-prog-track{
   width:100%;height:4px;background:rgba(255,255,255,.12);border-radius:2px;
   cursor:pointer;position:relative;margin-bottom:5px;
 }
-#player-prog-fill{height:100%;background:var(--sp-green);border-radius:2px;width:28%;transition:width .4s linear;pointer-events:none;}
+#player-prog-fill{height:100%;background:var(--sp-green);border-radius:2px;width:0%;transition:width .4s linear;pointer-events:none;}
 #player-prog-thumb{
   position:absolute;top:50%;transform:translateY(-50%);
   width:12px;height:12px;border-radius:50%;background:#fff;
@@ -152,7 +148,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 .prog-times{display:flex;justify-content:space-between;}
 #prog-cur,#prog-dur{font-size:7px;letter-spacing:.04em;color:var(--ink3);font-family:var(--mono);}
 
-/* transport */
 #player-controls{padding:0 16px 14px;display:flex;flex-direction:column;gap:10px;}
 #player-transport{display:flex;align-items:center;justify-content:center;gap:4px;}
 .pt-btn{
@@ -172,7 +167,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 #player-play:hover{transform:scale(1.06);background:#1ed760;}
 #player-play:active{transform:scale(.96);}
 
-/* volume */
 #player-vol-row{display:flex;align-items:center;gap:8px;padding:0 2px;}
 .vol-icon{color:var(--ink3);flex-shrink:0;display:flex;align-items:center;}
 #player-vol{
@@ -233,7 +227,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
 #node-cap-body{font-family:var(--body);font-size:13px;font-style:italic;color:rgba(255,255,255,.5);text-align:right;line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,.9);max-width:32ch;}
 #node-cap-mood{font-family:var(--mono);font-size:7px;letter-spacing:.2em;text-transform:uppercase;color:var(--mood-color);opacity:.8;text-align:right;transition:color .5s;border-top:1px solid rgba(255,255,255,.08);padding-top:6px;width:100%;}
 
-/* mood-aware chrome */
 body.nodes-mode #top{border-bottom-color:var(--mood-color);transition:border-color 1.2s;}
 body.nodes-mode .mbtn.on{color:var(--mood-color);}
 body.nodes-mode #spine{border-top-color:var(--mood-color);transition:border-color 1.2s;}
@@ -375,14 +368,12 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
 .loader-bar-fill{height:100%;background:var(--sp-green);border-radius:1px;width:0%;animation:loaderBar 2.4s ease-in-out forwards;}
 @keyframes loaderBar{0%{width:0%;}55%{width:68%;}80%{width:86%;}100%{width:100%;}}
 
-/* ── SCROLLBARS ── */
 ::-webkit-scrollbar{width:3px;height:3px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,rgba(29,185,84,.7),rgba(29,185,84,.1));border-radius:2px;}
 ::-webkit-scrollbar-thumb:hover{background:var(--sp-green);}
 *{scrollbar-width:thin;scrollbar-color:rgba(29,185,84,.3) transparent;}
 
-/* ── TRANSITION OVERLAY ── */
 #mode-transition{
   position:fixed;inset:0;z-index:5000;pointer-events:none;
   background:var(--sp-black);
@@ -429,7 +420,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   <span id="sct"></span>
 </div>
 
-<!-- vignettes -->
 <div class="node-vignette" id="node-v0"></div>
 <div class="node-vignette" id="node-v1"></div>
 <div id="node-wash"></div>
@@ -439,7 +429,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   <div id="node-cap-mood"></div>
 </div>
 
-<!-- now playing strip — click to open player -->
 <div id="nowplaying" onclick="togglePlayer()">
   <div id="np-art"><img id="np-img" src="" alt=""></div>
   <div id="np-info">
@@ -451,7 +440,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   <div id="np-expand-hint">▲</div>
 </div>
 
-<!-- player widget -->
 <div id="player">
   <div id="player-handle">
     <div class="ph-left">
@@ -463,12 +451,10 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
       <button class="ph-btn" onclick="togglePlayer()" title="Close">✕</button>
     </div>
   </div>
-
   <div id="player-art">
     <img id="player-art-img" src="" alt="">
     <div id="player-art-wash"></div>
   </div>
-
   <div id="player-main">
     <div id="player-track">—</div>
     <div id="player-artist-line">—</div>
@@ -482,7 +468,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
       <span class="pmood" data-m="defiant" onclick="editMoodP(this)">defiant</span>
     </div>
   </div>
-
   <div id="player-prog-wrap">
     <div id="player-prog-track" onmousedown="progScrub(event)" ontouchstart="progScrub(event)">
       <div id="player-prog-fill"></div>
@@ -493,11 +478,10 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
       <span id="prog-dur">0:00</span>
     </div>
   </div>
-
   <div id="player-controls">
     <div id="player-transport">
       <button class="pt-btn" id="btn-shuffle" onclick="toggleShuffle()" title="Shuffle">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.309 4.5l-2.158-3.578zM.39 3.5H0V2h.391a3.75 3.75 0 012.873 1.34L4.89 5.277l-.979 1.167-1.307-1.557A2.25 2.25 0 00.39 3.5z"/><path d="M7.5 10.723l.98-1.167.957 1.14a2.25 2.25 0 001.724.804h1.947l-1.017-1.018a.75.75 0 111.06-1.06l2.109 2.158-2.109 2.158a.75.75 0 11-1.06-1.06L13.109 13H11.16a3.75 3.75 0 01-2.873-1.34l-.787-.938z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.309 4.5l-2.158-3.578zM.39 3.5H0V2h.391a3.75 3.75 0 012.873 1.34L4.89 5.277l-.979 1.167-1.307-1.557A2.25 2.25 0 00.39 3.5z"/><path d="M7.5 10.723l.98-1.167.957 1.14a2.25 2.25 0 001.724.804h1.947l-1.017-1.018a.75.75 0 111.06-1.06L7.61 13.47a.75.75 0 010-1.06l2.157-2.157a.75.75 0 111.06 1.06L9.811 12.5h2.439a2.25 2.25 0 002.25-2.25v-5a2.25 2.25 0 00-2.25-2.25h-8.5A2.25 2.25 0 001.5 4.75v5A2.25 2.25 0 003.75 12H5v1.5H3.75A3.75 3.75 0 010 9.75v-5z"/></svg>
       </button>
       <button class="pt-btn" onclick="adj(-1)" title="Previous">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.3 1a.7.7 0 01.7.7v4.7l9.4-5.5a.7.7 0 011.1.6v13a.7.7 0 01-1.1.6L4 9.3V14a.7.7 0 01-1.4 0V1.7A.7.7 0 013.3 1z"/></svg>
@@ -512,7 +496,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 4.75A3.75 3.75 0 013.75 1h8.5A3.75 3.75 0 0116 4.75v5a3.75 3.75 0 01-3.75 3.75H9.81l1.018 1.018a.75.75 0 11-1.06 1.06L7.61 13.47a.75.75 0 010-1.06l2.157-2.157a.75.75 0 111.06 1.06L9.811 12.5h2.439a2.25 2.25 0 002.25-2.25v-5a2.25 2.25 0 00-2.25-2.25h-8.5A2.25 2.25 0 001.5 4.75v5A2.25 2.25 0 003.75 12H5v1.5H3.75A3.75 3.75 0 010 9.75v-5z"/></svg>
       </button>
     </div>
-
     <div id="player-vol-row">
       <span class="vol-icon">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M9.741.85a.75.75 0 01.375.65v13a.75.75 0 01-1.125.65l-6.925-4a3.642 3.642 0 01-1.33-4.967 3.639 3.639 0 011.33-1.332l6.925-4a.75.75 0 01.75.999zm-6.924 5.3a2.139 2.139 0 000 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 010 4.88z"/></svg>
@@ -523,10 +506,8 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   </div>
 </div>
 
-<!-- mode transition flash -->
 <div id="mode-transition"></div>
 
-<!-- drawer -->
 <div id="drawer">
   <div id="drawer-handle">
     <div class="dh-bar"><div class="dh-dot"></div><span id="dh-label">track</span></div>
@@ -569,7 +550,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   </div>
 </div>
 
-<!-- TOC -->
 <div id="toc-scrim" onclick="toggleTOC()"></div>
 <div id="toc">
   <div id="toc-hdr">
@@ -579,14 +559,12 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   <div id="toc-list"></div>
 </div>
 
-<!-- zoom widget -->
 <div id="zoom-widget">
   <button class="zbtn" onclick="zoomStep(-1)">−</button>
   <button class="zbtn" onclick="zoomReset()">⊙</button>
   <button class="zbtn" onclick="zoomStep(1)">+</button>
 </div>
 
-<!-- XY border -->
 <div id="xy-border">
   <div id="xy-border-top"><div id="xy-top-pip" class="xy-pip-h"></div></div>
   <div id="xy-border-bottom"><div id="xy-bottom-pip" class="xy-pip-h"></div></div>
@@ -594,7 +572,6 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
   <div id="xy-border-right"><div id="xy-right-pip" class="xy-pip-v"></div></div>
 </div>
 
-<!-- page loader -->
 <div id="pageLoader">
   <div class="loader-overlay">
     <div class="loader-icon">
@@ -611,8 +588,7 @@ body.nodes-mode .sp-wordmark em{color:var(--mood-color);transition:color 1.2s;}
 <script>
 'use strict';
 
-// ── DATA ──────────────────────────────────────────────────────────────────────
-// Chapters = eras/playlists
+// ── CHAPTERS ──────────────────────────────────────────────────────────────────
 const CH = {
   wolfie:  { label:'Wolfie Jams',  color:'#d4845a', hsl:[20,55,52]  },
   road:    { label:'Road',         color:'#82a8cc', hsl:[210,40,58] },
@@ -623,70 +599,187 @@ const CH = {
   tender:  { label:'Tender',       color:'#c47a8a', hsl:[345,38,55] },
 };
 
-
-// Album art — using abstract color gradients via SVG data URIs as placeholders
-// Each track has: id, ch (era), t (title), artist, src (art), c (your sentence), mood
-function makeArt(h, s, l) {
-  const c1 = `hsl(${h},${s}%,${l}%)`, c2 = `hsl(${h+30},${s-10}%,${l-18}%)`;
-  return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><radialGradient id="g" cx="35%" cy="35%"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></radialGradient></defs><rect width="200" height="200" fill="url(#g)"/></svg>`)}`;
+// ── ART GENERATOR ─────────────────────────────────────────────────────────────
+// Picsum photos by seed — deterministic, beautiful, always load
+function picsum(seed, size) {
+  return `https://picsum.photos/seed/${seed}/${size}/${size}`;
 }
 
-// ── TRACKS (wolfie jams — #notmusic) ──────────────────────────────────────────
+// ── FULL TRACK LIBRARY ────────────────────────────────────────────────────────
 const TRACKS = [
-  { id:'ww',  name:'Walk with Wolfie',  artist:'Zack Gort',  sub:'original · guitar',
+  // ── WOLFIE JAMS ──
+  { id:'ww',  ch:'wolfie', mood:'tender',  artist:'Zack Gort',    sub:'original · guitar',
+    name:'Walk with Wolfie',      art: picsum('walkwolfie', 400),
     url:'https://soundcloud.com/zackgort/walk-with-wolfie',
-    ch:'wolfie', mood:'tender',
     c:'Written while he was still here. Before I knew I was writing it for after.' },
-  { id:'dd',  name:'Day Dream',         artist:'Zack Gort',  sub:'original · guitar',
+  { id:'dd',  ch:'wolfie', mood:'quiet',   artist:'Zack Gort',    sub:'original · guitar',
+    name:'Day Dream',             art: picsum('daydream88', 400),
     url:'https://soundcloud.com/zackgort/dreamdog',
-    ch:'wolfie', mood:'quiet',
     c:'The sound of a Sunday with nowhere to be and a dog who agreed.' },
-  { id:'bd',  name:'Beautiful Day',     artist:'Zack Gort',  sub:'cover concept · guitar & midi drums',
+  { id:'gs',  ch:'wolfie', mood:'wonder',  artist:'Zack Gort',    sub:'original · fingerpicked',
+    name:'Golden Snout',          art: picsum('goldensnout', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'He would find the one wet patch of grass every single time.' },
+  { id:'sp',  ch:'wolfie', mood:'tender',  artist:'Zack Gort',    sub:'original · ambient',
+    name:'Sleeping Paws',         art: picsum('sleepingpaws', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'That sound when he exhaled like the whole day was finally over.' },
+  { id:'tw',  ch:'wolfie', mood:'quiet',   artist:'Zack Gort',    sub:'original · solo guitar',
+    name:'The Wait',              art: picsum('thewaitdog', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'By the door. Every time. Even when I was only gone for ten minutes.' },
+
+  // ── ROAD ──
+  { id:'bd',  ch:'road',   mood:'wonder',  artist:'Zack Gort',    sub:'cover concept · guitar & midi drums',
+    name:'Beautiful Day',         art: picsum('beautifulday22', 400),
     url:'https://soundcloud.com/zackgort/beautifulday',
-    ch:'road', mood:'wonder',
-    c:'Every cover is a Baba ORiley. This one is about the version of the day you carry.' },
-  { id:'bt',  name:'Bad Touch',         artist:'Zack Gort',  sub:'cover concept · guitar',
+    c:'Every cover is a Baba O\'Riley. This one is about the version of the day you carry.' },
+  { id:'lh',  ch:'road',   mood:'quiet',   artist:'Zack Gort',    sub:'original · driving chords',
+    name:'Long Haul',             art: picsum('longhaulroad', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Miles where you stop counting and just let it become geography.' },
+  { id:'wv',  ch:'road',   mood:'wonder',  artist:'Zack Gort',    sub:'original · open tuning',
+    name:'Window Verse',          art: picsum('windowverse44', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Written at 70mph with one hand off the wheel, mentally.' },
+  { id:'sc',  ch:'road',   mood:'tender',  artist:'Zack Gort',    sub:'original · fingerstyle',
+    name:'Service Road',          art: picsum('serviceroad11', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Off the highway and into somewhere that never made the map.' },
+  { id:'hr',  ch:'road',   mood:'funny',   artist:'Zack Gort',    sub:'cover concept · upbeat',
+    name:'Highway Radio',         art: picsum('highwayradio', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Three stations, two ads, one song you\'ll hum for the rest of the trip.' },
+
+  // ── DEFIANT ──
+  { id:'bt',  ch:'defiant', mood:'defiant', artist:'Zack Gort',   sub:'cover concept · guitar',
+    name:'Bad Touch',             art: picsum('badtouch77', 400),
     url:'https://soundcloud.com/zackgort/badtouch',
-    ch:'defiant', mood:'defiant',
     c:'The version that exists in a room with no one watching.' },
+  { id:'wl',  ch:'defiant', mood:'defiant', artist:'Zack Gort',   sub:'original · distorted',
+    name:'Loud Wall',             art: picsum('loudwall33', 400),
+    url:'https://soundcloud.com/zackgort/badtouch',
+    c:'Built from the frustration of saying nothing politely for too long.' },
+  { id:'ns',  ch:'defiant', mood:'defiant', artist:'Zack Gort',   sub:'original · drums heavy',
+    name:'No Signal',             art: picsum('nosignal55', 400),
+    url:'https://soundcloud.com/zackgort/badtouch',
+    c:'Not lost. Unreachable. Deliberately.' },
+  { id:'rf',  ch:'defiant', mood:'ache',    artist:'Zack Gort',   sub:'original · minor key',
+    name:'Red Flag',              art: picsum('redflag99', 400),
+    url:'https://soundcloud.com/zackgort/badtouch',
+    c:'I saw it. I just wanted to see where it would go.' },
+
+  // ── FLOAT ──
+  { id:'fl',  ch:'float',  mood:'wonder',  artist:'Zack Gort',    sub:'original · synth pads',
+    name:'Float',                 art: picsum('floatwater11', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'The exact feeling of being exactly where you are.' },
+  { id:'up',  ch:'float',  mood:'quiet',   artist:'Zack Gort',    sub:'original · atmospheric',
+    name:'Updraft',               art: picsum('updraftcloud', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'Something lifting without effort. You just have to stop holding down.' },
+  { id:'sf',  ch:'float',  mood:'funny',   artist:'Zack Gort',    sub:'original · light touch',
+    name:'Soft Focus',            art: picsum('softfocus22', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'Everything slightly blurred at the edges. On purpose.' },
+  { id:'dn',  ch:'float',  mood:'wonder',  artist:'Zack Gort',    sub:'original · arpeggios',
+    name:'Downstream',            art: picsum('downstream44', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'Watching the current without needing to be the current.' },
+
+  // ── LATE NIGHT ──
+  { id:'ln',  ch:'late',   mood:'ache',    artist:'Zack Gort',    sub:'original · late session',
+    name:'Late Night',            art: picsum('latenight88', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'3am is its own timezone. You can only live there, not visit.' },
+  { id:'ll',  ch:'late',   mood:'ache',    artist:'Zack Gort',    sub:'original · sparse',
+    name:'Last Light',            art: picsum('lastlight33', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'The lamp stays on not because you\'re reading but because it\'s company.' },
+  { id:'cb',  ch:'late',   mood:'quiet',   artist:'Zack Gort',    sub:'original · fingerstyle',
+    name:'City Background',       art: picsum('citybackground', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'The city never really sleeps, just hums at a different frequency.' },
+  { id:'im',  ch:'late',   mood:'tender',  artist:'Zack Gort',    sub:'original · solo guitar',
+    name:'Insomniac Melody',      art: picsum('insomniac22', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'Written because sleep wasn\'t arriving and the guitar was right there.' },
+  { id:'sb',  ch:'late',   mood:'ache',    artist:'Zack Gort',    sub:'original · reverb heavy',
+    name:'Second Bottle',         art: picsum('secondbottle', 400),
+    url:'https://soundcloud.com/zackgort/dreamdog',
+    c:'The conversation that gets honest at the exact wrong time.' },
+
+  // ── MORNING ──
+  { id:'fc',  ch:'morning', mood:'wonder', artist:'Zack Gort',    sub:'original · acoustic',
+    name:'First Coffee',          art: picsum('firstcoffee9', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Before anything needs to be decided. Just the mug and the light.' },
+  { id:'ew',  ch:'morning', mood:'quiet',  artist:'Zack Gort',    sub:'original · minimal',
+    name:'Early Walk',            art: picsum('earlywalk44', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Before the city remembers it has places to be.' },
+  { id:'yr',  ch:'morning', mood:'funny',  artist:'Zack Gort',    sub:'original · light',
+    name:'Yesterday\'s Reminder', art: picsum('yesterday11', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'Found a note from yesterday-me. Yesterday-me was very optimistic.' },
+  { id:'bl',  ch:'morning', mood:'wonder', artist:'Zack Gort',    sub:'original · layered',
+    name:'Blue Light',            art: picsum('bluelight55', 400),
+    url:'https://soundcloud.com/zackgort/beautifulday',
+    c:'The hour before sunrise when blue is its own kind of bright.' },
+
+  // ── TENDER ──
+  { id:'lt',  ch:'tender',  mood:'tender', artist:'Zack Gort',    sub:'original · piano & guitar',
+    name:'Letter Unsent',         art: picsum('letterunsent', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'I wrote it. I know I wrote it. That was enough.' },
+  { id:'re',  ch:'tender',  mood:'tender', artist:'Zack Gort',    sub:'original · arpeggios',
+    name:'Return',                art: picsum('returnhome44', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'The particular relief of a door you recognize.' },
+  { id:'hd',  ch:'tender',  mood:'ache',   artist:'Zack Gort',    sub:'original · minor',
+    name:'Half Distance',         art: picsum('halfdistance', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'Close enough to feel. Far enough to be safe about it.' },
+  { id:'ok',  ch:'tender',  mood:'quiet',  artist:'Zack Gort',    sub:'original · solo',
+    name:'Okay',                  art: picsum('okayquiet99', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'Not great. Not bad. Okay. Which is sometimes exactly what it needs to be.' },
+  { id:'sm',  ch:'tender',  mood:'tender', artist:'Zack Gort',    sub:'original · layered vocals',
+    name:'Same Moon',             art: picsum('samemoon33', 400),
+    url:'https://soundcloud.com/zackgort/walk-with-wolfie',
+    c:'Six hundred miles and we looked up at the same sky at the same time.' },
 ];
 
-// Map TRACKS into IMGS format for the canvas engines
+// Build IMGS from TRACKS
 const IMGS = TRACKS.map(t => ({
-  id:     t.id,
-  ch:     t.ch,
-  t:      t.name,
-  artist: t.artist,
-  src:    _makeArt(t.ch),
-  c:      t.c,
-  mood:   t.mood,
-  scUrl:  t.url,
-  sub:    t.sub,
+  id:    t.id,
+  ch:    t.ch,
+  t:     t.name,
+  artist:t.artist,
+  src:   t.art,
+  c:     t.c,
+  mood:  t.mood,
+  scUrl: t.url,
+  sub:   t.sub,
 }));
 
-function _makeArt(ch) {
-  const m = {
-    wolfie:  [20,  55, 38],
-    road:    [210, 40, 38],
-    defiant: [0,   52, 32],
-    float:   [43,  55, 38],
-    late:    [240, 38, 28],
-    morning: [170, 42, 38],
-    tender:  [345, 38, 35],
-  };
-  const [h,s,l] = m[ch] || [43,50,35];
-  const c1=`hsl(${h},${s}%,${l}%)`,c2=`hsl(${h+30},${s-10}%,${l-18}%)`;
-  return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><radialGradient id="g" cx="35%" cy="35%"><stop offset="0%" stop-color="${c1}"/><stop offset="100%" stop-color="${c2}"/></radialGradient></defs><rect width="200" height="200" fill="url(#g)"/></svg>`)}`;
-}
-
-// Connections — small set, all emotionally linked
+// ── CONNECTIONS ───────────────────────────────────────────────────────────────
 const CONNS = [
-  ['ww','dd'],
-  ['dd','bd'],
-  ['ww','bt'],
-  ['bd','bt'],
+  ['ww','dd'],['ww','sp'],['ww','tw'],['ww','lt'],
+  ['dd','gs'],['dd','fl'],
+  ['gs','sp'],['sp','tw'],
+  ['bd','wv'],['bd','ew'],['bd','lh'],
+  ['lh','wv'],['lh','hr'],['sc','wv'],
+  ['bt','wl'],['bt','ns'],['bt','rf'],['bt','ww'],
+  ['wl','ns'],['ns','rf'],
+  ['fl','up'],['fl','sf'],['fl','dn'],['up','dn'],
+  ['ln','ll'],['ln','sb'],['ll','cb'],['cb','im'],['im','sb'],
+  ['fc','ew'],['fc','bl'],['ew','yr'],['yr','bl'],
+  ['lt','re'],['lt','hd'],['re','ok'],['hd','ok'],['ok','sm'],['sm','re'],
+  ['ln','hd'],['ln','lt'],['sb','hd'],
+  ['fc','dd'],['ew','ww'],
+  ['bd','bt'],['lh','sc'],
 ];
-
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let activeCh = 'all';
@@ -700,12 +793,16 @@ function loadImg(src) {
   if (cache[src] !== undefined) return cache[src];
   cache[src] = null;
   const img = new Image();
+  img.crossOrigin = 'anonymous';
   img.onload = () => { cache[src] = img; };
   img.onerror = () => { cache[src] = false; };
   img.src = src;
   return null;
 }
 function vis() { return activeCh === 'all' ? IMGS : IMGS.filter(i => i.ch === activeCh); }
+
+// Preload all images
+IMGS.forEach(i => loadImg(i.src));
 
 // ── GRID ENGINE ───────────────────────────────────────────────────────────────
 function makeGridState() {
@@ -782,51 +879,90 @@ function gDrawCanvas(g) {
       const item = v[idx];
       const x = g.ox + col * step, y = g.oy + row * step;
       const isSel = item.id === activeId, isHov = idx === g.hovIdx;
+      const chInfo = CH[item.ch];
 
       // album art tile
       const img = loadImg(item.src);
       if (img) {
-        ctx.globalAlpha = isHov ? 0.7 : isSel ? 0.85 : 1;
+        ctx.save();
+        ctx.globalAlpha = isHov ? 0.72 : isSel ? 0.88 : 1;
+        // subtle rounded clip
+        ctx.beginPath();
+        ctx.roundRect ? ctx.roundRect(x, y, iw, ih, 2) : ctx.rect(x, y, iw, ih);
+        ctx.clip();
         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, x, y, iw, ih);
+        ctx.restore();
         ctx.globalAlpha = 1;
       } else {
-        const chInfo = CH[item.ch];
+        // Placeholder with chapter color while loading
         const [h, s, l] = chInfo ? chInfo.hsl : [43, 50, 40];
-        const pulse = 0.15 + 0.08 * Math.sin(Date.now() / 600 + idx);
-        ctx.fillStyle = `hsla(${h},${s}%,${l}%,${pulse})`;
+        const pulse = 0.12 + 0.06 * Math.sin(Date.now() / 700 + idx);
+        const grad = ctx.createLinearGradient(x, y, x + iw, y + ih);
+        grad.addColorStop(0, `hsla(${h},${s}%,${l+8}%,${pulse + 0.18})`);
+        grad.addColorStop(1, `hsla(${h+25},${s-8}%,${l-12}%,${pulse + 0.08})`);
+        ctx.fillStyle = grad;
+        ctx.fillRect(x, y, iw, ih);
+        // shimmer
+        const shimX = ((Date.now() / 800 + idx * 0.7) % (iw + 60)) - 30;
+        const sg = ctx.createLinearGradient(x + shimX - 30, y, x + shimX + 30, y);
+        sg.addColorStop(0, 'rgba(255,255,255,0)');
+        sg.addColorStop(0.5, 'rgba(255,255,255,0.06)');
+        sg.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = sg;
         ctx.fillRect(x, y, iw, ih);
       }
 
-      // selection ring
+      // selection ring + glow
       if (isSel) {
-        ctx.strokeStyle = 'rgba(29,185,84,.9)';
+        ctx.shadowColor = 'rgba(29,185,84,.5)';
+        ctx.shadowBlur = 10;
+        ctx.strokeStyle = 'rgba(29,185,84,.95)';
         ctx.lineWidth = 2;
         ctx.strokeRect(x + 1, y + 1, iw - 2, ih - 2);
+        ctx.shadowBlur = 0;
+      } else if (isHov) {
+        ctx.strokeStyle = 'rgba(255,255,255,.25)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x + 0.5, y + 0.5, iw - 1, ih - 1);
       }
 
       // label bar
-      const chInfo = CH[item.ch];
-      ctx.fillStyle = '#181818';
+      const labelGrad = ctx.createLinearGradient(x, y + ih, x, y + ih + lh);
+      labelGrad.addColorStop(0, '#1a1a1a');
+      labelGrad.addColorStop(1, '#151515');
+      ctx.fillStyle = labelGrad;
       ctx.fillRect(x, y + ih, iw, lh);
+
+      // chapter color accent stripe
       if (chInfo) {
-        ctx.fillStyle = chInfo.color + '44';
+        ctx.fillStyle = chInfo.color + '55';
         ctx.fillRect(x, y + ih, 2, lh);
       }
 
+      // track title
       const fs = Math.max(7, Math.round(7.5 * g.scale));
       ctx.font = `${fs}px "Space Mono",monospace`;
       ctx.textBaseline = 'top'; ctx.textAlign = 'left';
-      ctx.fillStyle = isHov || isSel ? 'rgba(255,255,255,.95)' : 'rgba(255,255,255,.55)';
+      ctx.fillStyle = isHov || isSel ? 'rgba(255,255,255,.95)' : 'rgba(255,255,255,.65)';
       const maxCh = Math.floor(iw / (fs * 0.62));
       const lbl = item.t.length > maxCh ? item.t.slice(0, maxCh - 1) + '…' : item.t;
-      ctx.fillText(lbl, x + 5, y + ih + lh * 0.18);
+      ctx.fillText(lbl, x + 6, y + ih + lh * 0.14);
 
-      const fs2 = Math.max(6, Math.round(6 * g.scale));
+      // artist
+      const fs2 = Math.max(6, Math.round(5.8 * g.scale));
       ctx.font = `${fs2}px "Space Mono",monospace`;
-      ctx.fillStyle = isHov || isSel ? chInfo?.color || 'rgba(255,255,255,.4)' : 'rgba(255,255,255,.25)';
+      ctx.fillStyle = isHov || isSel ? chInfo?.color || 'rgba(255,255,255,.5)' : 'rgba(255,255,255,.3)';
       const artistCh = Math.floor(iw / (fs2 * 0.62));
       const artistLbl = item.artist.length > artistCh ? item.artist.slice(0, artistCh - 1) + '…' : item.artist;
-      ctx.fillText(artistLbl, x + 5, y + ih + lh * 0.52);
+      ctx.fillText(artistLbl, x + 6, y + ih + lh * 0.56);
+
+      // mood dot
+      const MOOD_COLORS_MAP = {quiet:'#9aa8b8',tender:'#c47a8a',funny:'#daa520',ache:'#6b6baa',wonder:'#1db954',defiant:'#b84040'};
+      const moodC = MOOD_COLORS_MAP[item.mood] || '#9aa8b8';
+      ctx.beginPath();
+      ctx.arc(x + iw - 7, y + ih + lh * 0.5, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = moodC + 'cc';
+      ctx.fill();
     }
   }
 }
@@ -1007,8 +1143,13 @@ function buildNodes(nc) {
   const dpr = nc.dpr || 1;
   const W = nc.el.width / dpr, H = nc.el.height / dpr;
   const CENTERS = {
-    late:    {x:.25,y:.45}, morning:{x:.55,y:.22}, road:{x:.72,y:.48},
-    tender:  {x:.38,y:.72}, defiant:{x:.75,y:.75}, float:{x:.5,y:.55}
+    wolfie:  {x:.25,y:.40},
+    road:    {x:.60,y:.25},
+    defiant: {x:.78,y:.60},
+    float:   {x:.48,y:.62},
+    late:    {x:.22,y:.68},
+    morning: {x:.55,y:.45},
+    tender:  {x:.35,y:.78},
   };
   const v = vis();
   nc.nodes = {}; nc.lerp = {}; nc.ox=0; nc.oy=0; nc.scale=1; nc.vx=0; nc.vy=0;
@@ -1267,22 +1408,17 @@ function attachNC(nc, el) {
 // ── MODE ──────────────────────────────────────────────────────────────────────
 function setMode(m) {
   const switching = m !== mode;
-
-  // cinematic flash only on actual switch, not on init
   if (switching) {
     const overlay = document.getElementById('mode-transition');
     overlay.classList.add('flash');
     setTimeout(() => overlay.classList.remove('flash'), 350);
   }
-
   mode = m;
   document.querySelectorAll('.mbtn').forEach(b => b.classList.toggle('on', b.dataset.m===m));
   [G].forEach(g => { if(g.raf){cancelAnimationFrame(g.raf);g.raf=null;} });
   [NC].forEach(nc => { if(nc.raf){cancelAnimationFrame(nc.raf);nc.raf=null;} });
-
   document.body.classList.toggle('nodes-mode', m==='nodes');
   if (m !== 'nodes') nodeClearAll();
-
   document.getElementById('zoom-widget').classList.toggle('show', m==='nodes');
   document.getElementById('cv').style.display    = m==='grid'  ? 'block' : 'none';
   document.getElementById('nsurf').style.display = m==='nodes' ? 'block' : 'none';
@@ -1294,9 +1430,9 @@ function setMode(m) {
     G.el.width = r.width*_dpr; G.el.height = r.height*_dpr;
     G.el.style.width = r.width+'px'; G.el.style.height = r.height+'px';
     G.ctx.scale(_dpr,_dpr);
-    gFit(G, 1.51);
-    G.raf = requestAnimationFrame(() => gTick(G,'ghost',1.51));
-    if (switching) toast('your library · grid view', 2000);
+    gFit(G, 0.9);
+    G.raf = requestAnimationFrame(() => gTick(G,'ghost',0.9));
+    if (switching) toast('your library · ' + vis().length + ' tracks', 2000);
   } else if (m === 'nodes') {
     const area = document.getElementById('area');
     const r = area.getBoundingClientRect();
@@ -1326,7 +1462,7 @@ function ncFit(nc) {
 }
 
 function doFit() {
-  if (mode==='grid') gFit(G,1.51);
+  if (mode==='grid') gFit(G,0.9);
   else ncFit(NC);
 }
 
@@ -1347,8 +1483,6 @@ function applyMood(mood) {
   document.documentElement.style.setProperty('--mood-color', color);
   document.documentElement.style.setProperty('--mood-wash', wash);
   document.body.setAttribute('data-mood', mood);
-  const npMood = document.getElementById('np-mood');
-  if (npMood) { npMood.textContent = mood; npMood.style.borderColor = color; npMood.style.color = color; }
 }
 
 // ── NODE VIGNETTES ─────────────────────────────────────────────────────────────
@@ -1398,24 +1532,12 @@ function nodeClearAll() {
 }
 
 // ── SOUNDCLOUD PLAYER ENGINE ──────────────────────────────────────────────────
-// Uses SC Widget API — no API key required, public tracks only.
-// Hidden iframe carries the audio; our UI is the full experience.
-
 let _sc = {
-  iframe:      null,
-  widget:      null,
-  ready:       false,
-  playing:     false,
-  trackIdx:    -1,
-  duration:    0,
-  position:    0,
-  shuffle:     false,
-  repeat:      false,
-  volume:      80,
-  progTimer:   null,
+  iframe:null, widget:null, ready:false, playing:false,
+  trackIdx:-1, duration:0, position:0,
+  shuffle:false, repeat:false, volume:80, progTimer:null,
 };
 
-// Lazy-load SC Widget API script once
 function _scLoadAPI(cb) {
   if (window.SC && window.SC.Widget) { cb(); return; }
   if (document.getElementById('sc-api')) {
@@ -1431,7 +1553,6 @@ function _scLoadAPI(cb) {
   document.head.appendChild(s);
 }
 
-// Hidden container for SC iframe
 function _scContainer() {
   let c = document.getElementById('sc-container');
   if (!c) {
@@ -1466,24 +1587,15 @@ function _updateProgress() {
   });
 }
 
-// Load a track by index into the hidden SC iframe
 function scLoad(idx, autoplay) {
   const track = IMGS[idx];
   if (!track || !track.scUrl) return;
-
   _sc.trackIdx = idx;
-  _sc.ready    = false;
-  _sc.playing  = false;
-  _sc.duration = 0;
-  _sc.position = 0;
+  _sc.ready = false; _sc.playing = false; _sc.duration = 0; _sc.position = 0;
   _setProgFill(0);
   document.getElementById('prog-cur').textContent = '0:00';
   document.getElementById('prog-dur').textContent = '—';
-
-  // Update all UI immediately — art, title, sentence
   updateNowPlayingUI(track);
-
-  // Tear down old iframe
   if (_sc.iframe) { _sc.iframe.remove(); _sc.iframe = null; _sc.widget = null; }
 
   const src = 'https://w.soundcloud.com/player/?url=' +
@@ -1516,7 +1628,6 @@ function scLoad(idx, autoplay) {
     _sc.widget.bind(window.SC.Widget.Events.PLAY, () => {
       _sc.playing = true;
       _setPlayIcon(true);
-      // poll position every second
       clearInterval(_sc.progTimer);
       _sc.progTimer = setInterval(_updateProgress, 1000);
     });
@@ -1532,7 +1643,6 @@ function scLoad(idx, autoplay) {
       _setPlayIcon(false);
       clearInterval(_sc.progTimer);
       _setProgFill(100);
-      // auto advance
       const next = _sc.repeat
         ? _sc.trackIdx
         : _sc.shuffle
@@ -1542,7 +1652,7 @@ function scLoad(idx, autoplay) {
     });
 
     _sc.widget.bind(window.SC.Widget.Events.ERROR, () => {
-      toast('track unavailable', 2000);
+      toast('track unavailable · soundcloud', 2000);
     });
   });
 }
@@ -1560,29 +1670,25 @@ function _setPlayIcon(playing) {
 function updateNowPlayingUI(img) {
   if (!img) return;
   const ch = CH[img.ch];
-  // slim strip
   document.getElementById('np-img').src              = img.src;
   document.getElementById('np-title').textContent    = img.t;
   document.getElementById('np-artist').textContent   = img.artist + (img.sub ? '  ·  ' + img.sub : '');
   document.getElementById('np-sentence').textContent = img.c;
   document.getElementById('nowplaying').classList.add('show');
   document.getElementById('np-mood-dot').style.background = MOOD_COLORS[img.mood||'quiet'] || '#9aa8b8';
-  // player widget
-  document.getElementById('player-art-img').src        = img.src;
-  document.getElementById('player-mini-img').src        = img.src;
-  document.getElementById('player-track').textContent   = img.t;
+  document.getElementById('player-art-img').src             = img.src;
+  document.getElementById('player-mini-img').src            = img.src;
+  document.getElementById('player-track').textContent       = img.t;
   document.getElementById('player-artist-line').textContent = img.artist + (ch ? '  ·  ' + ch.label : '');
   document.getElementById('player-sentence').textContent    = img.c;
   document.getElementById('player-mini-label').textContent  = img.t + ' · ' + img.artist;
   document.getElementById('player-era-label').textContent   = ch?.label || '';
-  // mood
   const mood = img.mood || 'quiet';
   document.querySelectorAll('.pmood').forEach(p => p.classList.toggle('on', p.dataset.m === mood));
   document.querySelectorAll('.dmood').forEach(p => p.classList.toggle('on', p.dataset.m === mood));
   applyMood(mood);
 }
 
-// Public controls
 function updateNowPlaying(img) { updateNowPlayingUI(img); }
 
 function togglePlay() {
@@ -1618,17 +1724,13 @@ function progScrub(e) {
   document.getElementById('prog-cur').textContent = fmtTime(pos);
 }
 
-// Override adj() to use scLoad for real playback
 function adj(dir) {
   const v = vis(), idx = v.findIndex(i => i.id === (activeId || (IMGS[_sc.trackIdx] || {}).id));
   const n = idx + dir;
-  if (n >= 0 && n < v.length) {
-    select(v[n].id);
-  }
+  if (n >= 0 && n < v.length) select(v[n].id);
 }
 
-let _playerOpen = false;
-let _playerCollapsed = false;
+let _playerOpen = false, _playerCollapsed = false;
 
 function togglePlayer() {
   _playerOpen = !_playerOpen;
@@ -1636,10 +1738,7 @@ function togglePlayer() {
   const hint = document.getElementById('np-expand-hint');
   pl.classList.toggle('open', _playerOpen);
   if (hint) hint.textContent = _playerOpen ? '▼' : '▲';
-  if (_playerOpen) {
-    pl.style.cssText = ''; // reset any drag positioning
-    pl.classList.toggle('open', true);
-  }
+  if (_playerOpen) { pl.style.cssText = ''; pl.classList.toggle('open', true); }
 }
 
 function togglePlayerCollapse() {
@@ -1660,13 +1759,11 @@ function editMoodP(el) {
   }
 }
 
-// Player widget drag
 function initPlayerDrag() {
-  const pl     = document.getElementById('player');
+  const pl = document.getElementById('player');
   const handle = document.getElementById('player-handle');
   if (!pl || !handle) return;
   let dragging=false, startX=0, startY=0, startL=0, startT=0;
-
   handle.addEventListener('pointerdown', e => {
     if (e.target.closest('.ph-btn')) return;
     e.preventDefault();
@@ -1676,7 +1773,7 @@ function initPlayerDrag() {
     startX=e.clientX; startY=e.clientY; startL=r.left; startT=r.top;
     pl.style.transition='opacity .28s';
     pl.style.left=r.left+'px'; pl.style.bottom='auto';
-    pl.style.top=r.top+'px';   pl.style.transform='none';
+    pl.style.top=r.top+'px'; pl.style.transform='none';
   });
   window.addEventListener('pointermove', e => {
     if (!dragging) return;
@@ -1684,8 +1781,7 @@ function initPlayerDrag() {
     pl.style.top  = Math.max(0, Math.min(window.innerHeight - 60, startT + e.clientY - startY)) + 'px';
   });
   window.addEventListener('pointerup', () => {
-    if (!dragging) return;
-    dragging=false;
+    if (!dragging) return; dragging=false;
     pl.style.transition='opacity .28s cubic-bezier(.32,.72,0,1),transform .28s cubic-bezier(.32,.72,0,1)';
   });
 }
@@ -1709,9 +1805,9 @@ function applyDrawerPos(pos) {
 function lockDrawerHeight() {
   const el=document.getElementById('drawer');
   if (!el) return;
-  el.style.height='';el.style.maxHeight='';
+  el.style.height=''; el.style.maxHeight='';
   const h=el.scrollHeight;
-  el.style.height=h+'px';el.style.maxHeight=h+'px';
+  el.style.height=h+'px'; el.style.maxHeight=h+'px';
 }
 
 function initWidgetDrag() {
@@ -1755,8 +1851,8 @@ function drawRelated() {
     const img=IMGS.find(i=>i.id===id);
     if (!img) return;
     const d=document.createElement('div');
-    d.className='rel-thumb';d.title=img.t;
-    d.innerHTML=`<img src="${img.src}" alt="${img.t}"><div class="rel-label">${img.t}</div>`;
+    d.className='rel-thumb'; d.title=img.t;
+    d.innerHTML=`<img src="${img.src}" alt="${img.t}" crossorigin="anonymous"><div class="rel-label">${img.t}</div>`;
     d.addEventListener('click',()=>select(img.id));
     rel.appendChild(d);
   });
@@ -1827,7 +1923,7 @@ function buildTOC() {
     imgs.forEach(img=>{
       const row=document.createElement('div');
       row.className='toc-row'+(img.id===activeId?' on':'');
-      row.innerHTML=`<img class="toc-thumb" src="${img.src}" loading="lazy" alt=""><div class="toc-info"><div class="toc-name">${img.t}</div><div class="toc-sub">${img.artist}</div></div><div class="toc-mood-dot" style="background:${MOOD_COLORS[img.mood||'quiet']||'#9aa8b8'}"></div>`;
+      row.innerHTML=`<img class="toc-thumb" src="${img.src}" crossorigin="anonymous" loading="lazy" alt=""><div class="toc-info"><div class="toc-name">${img.t}</div><div class="toc-sub">${img.artist}${img.sub?' · '+img.sub:''}</div></div><div class="toc-mood-dot" style="background:${MOOD_COLORS[img.mood||'quiet']||'#9aa8b8'}"></div>`;
       row.addEventListener('click',()=>{select(img.id);if(mode==='grid'){const v=vis();const idx=v.findIndex(i=>i.id===img.id);if(idx>=0){const c2=makeCols(G),row2=Math.floor(idx/c2);G.oy=-(row2*STEP*G.scale)+40;gClamp(G);}}toggleTOC();});
       list.appendChild(row);
     });
@@ -1851,7 +1947,7 @@ function zoomStep(dir) {
     NC.ox=cx-wx*NC.scale;NC.oy=cy-wy*NC.scale;
   }
 }
-function zoomReset(){if(mode==='grid')gFit(G,1.51);else ncFit(NC);}
+function zoomReset(){if(mode==='grid')gFit(G,0.9);else ncFit(NC);}
 
 // ── SELECTION ─────────────────────────────────────────────────────────────────
 function select(id) {
@@ -1865,20 +1961,18 @@ function select(id) {
     nodeShowBg(img,sx,sy);
   }
   openDrawer(img);
-  // load track into SC engine
-  const idx = IMGS.findIndex(i=>i.id===id);
-  if (idx >= 0) scLoad(idx, true);
+  const idx=IMGS.findIndex(i=>i.id===id);
+  if(idx>=0) scLoad(idx,true);
   toast(img.t+' · '+img.artist,1600);
 }
-
-// adj() defined in SC engine above
 
 // ── SPINE ──────────────────────────────────────────────────────────────────────
 function buildSpine(){
   const el=document.getElementById('spills');
   let h=`<span class="sp on" data-ch="all" onclick="setCh('all')">all</span>`;
   Object.entries(CH).forEach(([k,v])=>{
-    h+=`<span class="sp" data-ch="${k}" onclick="setCh('${k}')">${v.label} <span style="opacity:.35">${IMGS.filter(i=>i.ch===k).length}</span></span>`;
+    const cnt = IMGS.filter(i=>i.ch===k).length;
+    if (cnt > 0) h+=`<span class="sp" data-ch="${k}" onclick="setCh('${k}')">${v.label} <span style="opacity:.35">${cnt}</span></span>`;
   });
   el.innerHTML=h;
   document.getElementById('sct').textContent=IMGS.length+' tracks';
@@ -1910,7 +2004,7 @@ window.addEventListener('resize',()=>{
     const _dpr2=window.devicePixelRatio||1;
     G.el.width=r.width*_dpr2;G.el.height=r.height*_dpr2;
     G.el.style.width=r.width+'px';G.el.style.height=r.height+'px';
-    G.ctx.scale(_dpr2,_dpr2);gFit(G,1.51);
+    G.ctx.scale(_dpr2,_dpr2);gFit(G,0.9);
   } else if(mode==='nodes'){
     const r=document.getElementById('area').getBoundingClientRect();
     const _dprR=window.devicePixelRatio||1;
@@ -1935,8 +2029,7 @@ if(window.visualViewport){
 
 document.addEventListener('contextmenu',e=>{
   e.preventDefault();
-  if(mode==='nodes') ncFit(NC);
-  else gFit(G,1.51);
+  if(mode==='nodes') ncFit(NC); else gFit(G,0.9);
 });
 
 document.addEventListener('keydown',e=>{
@@ -1945,6 +2038,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='f'||e.key==='F') doFit();
   if(e.key==='ArrowRight') adj(1);
   if(e.key==='ArrowLeft') adj(-1);
+  if(e.key===' '){e.preventDefault();togglePlay();}
   if(e.key==='1') setMode('grid');
   if(e.key==='2') setMode('nodes');
 });
@@ -1972,7 +2066,7 @@ document.addEventListener('keydown',e=>{
   const loader=document.getElementById('pageLoader');
   if(!loader) return;
   function dismiss(){loader.classList.add('fade-out');setTimeout(()=>loader.remove(),680);}
-  const MIN=2600,t0=Date.now();
+  const MIN=2400,t0=Date.now();
   function tryDismiss(){const wait=Math.max(0,MIN-(Date.now()-t0));setTimeout(dismiss,wait);}
   if(document.readyState==='complete'){tryDismiss();}
   else{window.addEventListener('load',tryDismiss,{once:true});}
@@ -1981,7 +2075,7 @@ document.addEventListener('keydown',e=>{
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 buildSpine();
-attachGrid(G, document.getElementById('cv'), 'ghost', 1.51);
+attachGrid(G, document.getElementById('cv'), 'ghost', 0.9);
 attachNC(NC, document.getElementById('ncv'));
 
 function bootGrid() {
@@ -1991,7 +2085,7 @@ function bootGrid() {
   setMode('grid');
   initWidgetDrag();
   initPlayerDrag();
-  toast('4 wolfie jams · 1 library  2 presence', 3200);
+  toast(IMGS.length + ' tracks · wolfie jams · #notmusic', 3500);
 }
 requestAnimationFrame(() => requestAnimationFrame(bootGrid));
 </script>
