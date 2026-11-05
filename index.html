@@ -18,7 +18,7 @@
     <meta property="twitter:description" content="For Wolfgang.">
     <meta property="twitter:image" content="https://ifimaybefrank.com/og-image.jpg">
     
-    <title>Wolfgang</title>
+    <title>wolfie.love 𖹭</title>
     <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAA8AQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAQNJREFUeJxjYKAQMMIYlzJ5/qNL6k3/wkhIjgWmQCFQh4GBgYGBjZmRgZ2dmeHnz78Mlxgu/2dgYGCAySGDSwxX/utN/8LIyMDAwPBynQncBlEuFgZGDQGG/zc+MLz+9gev88WDzjCyMDAwMHz/ilD44sdfBv6zbxg+/vzL8OsvhssxAMSALwgDvjMwMHxk+E1QI6oBX/E7lSQXkArg0binVJGwh5GAS/d9RhQDGBgYGDZnyhJliO/0x3B9jOiSq+Ik8RoStug5ih4MAxgYGBgWBoliNSR+3WsM9VgNYGBgYJjhLohiSMbO9zjV4gT91rz/+6158XqJBZ/k969/SbaUZAAABDJTRS3nencAAAAASUVORK5CYII=" sizes="any">
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImhnIiBjeD0iNDIlIiBjeT0iMzUlIiByPSI2NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjBiODQwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTUlIiBzdG9wLWNvbG9yPSIjZDQ4ODBhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiNGEwMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InNvZnQiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgaW49IlNvdXJjZUFscGhhIiBzdGREZXZpYXRpb249IjAuNSIgcmVzdWx0PSJibHVyIi8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJibHVyIiBvcGVyYXRvcj0ib3ZlciIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDwhLS0gSGVhcnQgcGF0aCBjZW50ZXJlZCBpbiAzMngzMiwgc2xpZ2h0bHkgb3JnYW5pYyBwcm9wb3J0aW9ucyAtLT4KICA8cGF0aCBmaWx0ZXI9InVybCgjc29mdCkiCiAgICBkPSJNMTYgMjcuMiBDMTYgMjcuMiA0IDE5LjIgNCAxMS42IEM0IDcuNCA3LjIgNCAxMS4yIDQgQzEzLjQgNCAxNS4yIDUuMiAxNiA2LjIgQzE2LjggNS4yIDE4LjYgNCAyMC44IDQgQzI0LjggNCAyOCA3LjQgMjggMTEuNiBDMjggMTkuMiAxNiAyNy4yIDE2IDI3LjJaIgogICAgZmlsbD0idXJsKCNoZykiCiAgLz4KPC9zdmc+" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1530,7 +1530,7 @@ body.compose-mode .pullquote-break .sentence-drag-handle { display: flex; align-
     opacity: 0.9;
 }
 .loader-bar-track {
-    width: 120px;
+    width: 160px;
     height: 2px;
     background: rgba(255,255,255,0.12);
     border-radius: 2px;
@@ -1541,13 +1541,140 @@ body.compose-mode .pullquote-break .sentence-drag-handle { display: flex; align-
     background: var(--accent);
     border-radius: 2px;
     width: 0%;
-    animation: loaderBarSweep 1.8s ease-in-out forwards;
+    transition: width 0.35s ease-out;
 }
-@keyframes loaderBarSweep {
-    0%   { width: 0%; }
-    60%  { width: 75%; }
-    85%  { width: 90%; }
-    100% { width: 100%; }
+.loader-meter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.loader-pct {
+    font-family: var(--ui-font);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+.loader-status {
+    font-family: var(--ui-font);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    min-height: 1.2em;
+    text-align: center;
+}
+.loader-skip {
+    display: none;
+    pointer-events: auto;
+    font-family: var(--ui-font);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 6px 12px;
+    margin-top: 4px;
+    cursor: pointer !important;
+}
+.loader-skip.show { display: inline-block; }
+
+/* ── Loader widget: scalable wolfie.life window ── */
+#loaderWidget {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3;
+    width: 440px;
+    max-width: calc(100vw - 24px);
+    background: rgba(10,10,10,0.82);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.55);
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: auto;
+    font-family: var(--ui-font);
+}
+#loaderWidget, #loaderWidget * { cursor: auto !important; }
+#loaderWidget button, #loaderWidget a { cursor: pointer !important; }
+#loaderWidget .lw-resize { cursor: nwse-resize !important; }
+.lw-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 8px 6px 24px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    user-select: none;
+}
+.lw-title { white-space: nowrap; }
+.lw-ctrls { display: flex; align-items: center; gap: 2px; }
+.lw-ctrls button, .lw-ctrls a {
+    all: unset;
+    box-sizing: border-box;
+    min-width: 22px;
+    height: 20px;
+    padding: 0 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    border-radius: 3px;
+}
+.lw-ctrls button:hover, .lw-ctrls a:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.lw-ctrls button:focus-visible, .lw-ctrls a:focus-visible { outline: 1px solid var(--accent); }
+.lw-ctrls button.active { color: var(--accent); background: rgba(255,255,255,0.08); }
+.lw-body {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+.lw-body::before {
+    content: 'loading wolfie.life…';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+}
+.lw-body iframe {
+    position: absolute;
+    top: 0; left: 0;
+    border: 0;
+    transform-origin: 0 0;
+    background: transparent;
+}
+#loaderWidget.lw-dragging .lw-body iframe { pointer-events: none; }
+#loaderWidget.lw-collapsed .lw-body { display: none; }
+#loaderWidget.lw-collapsed .lw-head { border-bottom: 0; }
+.lw-resize {
+    position: absolute;
+    top: 0; left: 0;
+    width: 22px; height: 22px;
+    z-index: 2;
+    touch-action: none;
+}
+.lw-resize::after {
+    content: '';
+    position: absolute;
+    top: 6px; left: 6px;
+    width: 9px; height: 9px;
+    border-top: 2px solid var(--accent);
+    border-left: 2px solid var(--accent);
+    opacity: 0.8;
+}
+@media (max-width: 640px) {
+    #loaderWidget { right: 12px; bottom: 12px; }
 }
 
 /* ===================================
@@ -3477,11 +3604,35 @@ body.compose-mode { padding-bottom: 0; }
     <!-- ════ PAGE LOADER ════ -->
     <div id="pageLoader">
         <video src="https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/soferocious.mp4"
-               muted autoplay loop playsinline preload="metadata" aria-hidden="true"></video>
+               muted autoplay loop playsinline preload="auto" aria-hidden="true"></video>
         <div class="loader-overlay">
             <span class="loader-paw">🐾</span>
             <span class="loader-wordmark">Wolfgang</span>
-            <div class="loader-bar-track"><div class="loader-bar-fill"></div></div>
+            <div class="loader-meter">
+                <div class="loader-bar-track" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="loader-bar-fill"></div></div>
+                <span class="loader-pct">0%</span>
+                <span class="loader-status" aria-live="polite">Starting…</span>
+                <button type="button" class="loader-skip">Enter anyway</button>
+            </div>
+        </div>
+
+        <!-- Scalable wolfie.life widget: drag the corner or use S / M / L -->
+        <div id="loaderWidget" role="complementary" aria-label="wolfie.life while you wait">
+            <div class="lw-head">
+                <span class="lw-title">wolfie.life</span>
+                <span class="lw-ctrls">
+                    <button type="button" data-lw-size="s" title="Small">S</button>
+                    <button type="button" data-lw-size="m" title="Medium">M</button>
+                    <button type="button" data-lw-size="l" title="Large">L</button>
+                    <a href="https://wolfie.life" target="_blank" rel="noopener" title="Open in a new tab">↗</a>
+                    <button type="button" data-lw-collapse aria-expanded="true" title="Collapse">–</button>
+                </span>
+            </div>
+            <div class="lw-body">
+                <iframe title="wolfie.life" referrerpolicy="no-referrer-when-downgrade"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+            <div class="lw-resize" title="Drag to resize" aria-hidden="true"></div>
         </div>
     </div>
 
@@ -7211,29 +7362,221 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Page Loader ──
+    // Real progress: every unique image in imageMap (+ fonts) is counted as it
+    // finishes loading AND decoding. The background video keeps playing until
+    // every one of them is in. Images that fail are retried; if some stay
+    // stubborn the loader keeps trying and offers "Enter anyway".
     (function initPageLoader() {
         const loader = document.getElementById('pageLoader');
         if (!loader) return;
-        // Dismiss after content is ready + brief cinematic hold
-        function dismissLoader() {
+
+        const bar      = loader.querySelector('.loader-bar-fill');
+        const track    = loader.querySelector('.loader-bar-track');
+        const pctEl    = loader.querySelector('.loader-pct');
+        const statusEl = loader.querySelector('.loader-status');
+        const skipBtn  = loader.querySelector('.loader-skip');
+        const video    = loader.querySelector('video');
+
+        const MIN_HOLD     = 500;    // ms to rest on 100% so the bar visibly completes
+        const STALL_MS     = 20000;  // one attempt gives up after this long
+        const MAX_ATTEMPTS = 3;      // per image, per round
+        const CONCURRENCY  = 6;
+        const FONT_CAP_MS  = 8000;
+        const SKIP_AFTER   = 15000;  // no progress for this long -> offer "Enter anyway"
+
+        const delay = ms => new Promise(r => setTimeout(r, ms));
+
+        // ── Background video: keep it rolling until the loader is gone ──
+        let alive = true;
+        function keepPlaying() {
+            if (!alive || !video || document.hidden) return;
+            const p = video.play();
+            if (p && p.catch) p.catch(() => {});
+        }
+        if (video) {
+            video.muted = true;
+            video.addEventListener('pause', keepPlaying);
+            video.addEventListener('canplay', keepPlaying);
+            document.addEventListener('visibilitychange', keepPlaying);
+            keepPlaying();
+        }
+
+        // ── Work list ──
+        const urls  = [...new Set(Object.values(imageMap))].filter(u => u && !isVideoUrl(u));
+        const total = urls.length + 1; // +1 = fonts
+        let done = 0;
+        let lastProgress = Date.now();
+        let finished = false;
+        const failed = new Set();
+
+        function render() {
+            const pct = Math.min(100, Math.floor((done / total) * 100));
+            bar.style.width = (done / total * 100) + '%';
+            pctEl.textContent = pct + '%';
+            track.setAttribute('aria-valuenow', String(pct));
+            const imgsDone = Math.min(done, urls.length);
+            statusEl.textContent = failed.size
+                ? `${failed.size} slow to respond — still trying`
+                : `${imgsDone} / ${urls.length} images`;
+        }
+        function bump() { done++; lastProgress = Date.now(); render(); }
+
+        // Resolves true only if the image loaded and decoded (not merely "finished")
+        function verify(img) {
+            return new Promise(resolve => {
+                const t = setTimeout(() => resolve(false), STALL_MS);
+                const ok = () => {
+                    const settle = good => { clearTimeout(t); resolve(good); };
+                    if (img.decode) img.decode().then(() => settle(true), () => settle(img.naturalWidth > 0));
+                    else settle(img.naturalWidth > 0);
+                };
+                const bad = () => { clearTimeout(t); resolve(false); };
+                if (img.complete) { img.naturalWidth > 0 ? ok() : bad(); }
+                else {
+                    img.addEventListener('load', ok, { once: true });
+                    img.addEventListener('error', bad, { once: true });
+                }
+            });
+        }
+        function freshImage(url) {
+            const img = new Image();
+            img.decoding = 'async';
+            if (url.indexOf('cdn.jsdelivr.net') !== -1) img.crossOrigin = 'anonymous';
+            img.src = url;
+            return img;
+        }
+        // Loads through the shared imageCache so the app reuses the exact same bytes
+        async function loadImage(url) {
+            for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+                const img = attempt === 0 ? getImage(url, 'high').img : freshImage(url);
+                if (await verify(img)) {
+                    const entry = imageCache.get(url) || {};
+                    entry.img = img; entry.done = true; entry.ok = true;
+                    imageCache.set(url, entry);
+                    return true;
+                }
+                await delay(800 * (attempt + 1));
+            }
+            return false;
+        }
+
+        async function loadAll() {
+            // Fonts count as one unit (capped so a bad font host can't hold us hostage)
+            const fonts = (document.fonts && document.fonts.ready)
+                ? Promise.race([document.fonts.ready, delay(FONT_CAP_MS)]) : Promise.resolve();
+            fonts.then(bump, bump);
+
+            // Main pass, small pool
+            const queue = [...urls];
+            const worker = async () => {
+                while (queue.length) {
+                    const u = queue.shift();
+                    if (await loadImage(u)) bump(); else { failed.add(u); render(); }
+                }
+            };
+            await Promise.all(Array.from({ length: Math.min(CONCURRENCY, queue.length) }, worker));
+
+            // Stragglers: keep retrying until they all land (or the visitor opts out)
+            while (failed.size && !finished) {
+                await delay(4000);
+                await Promise.all([...failed].map(async u => {
+                    if (await loadImage(u)) { failed.delete(u); bump(); }
+                }));
+            }
+            // Make sure the fonts unit has been counted before we call it complete
+            while (done < total && !finished) await delay(100);
+            if (!finished) { render(); await delay(MIN_HOLD); finish(); }
+        }
+
+        function finish() {
+            if (finished) return;
+            finished = true;
             loader.classList.add('fade-out');
-            setTimeout(() => { loader.remove(); }, 700);
+            setTimeout(() => { alive = false; loader.remove(); }, 700); // video plays through the fade
         }
-        // Dismiss after 2.6s minimum — long enough to feel cinematic, short enough to not annoy
-        const MIN_DISPLAY = 2600;
-        const startTime = Date.now();
-        function tryDismiss() {
-            const elapsed = Date.now() - startTime;
-            const remaining = Math.max(0, MIN_DISPLAY - elapsed);
-            setTimeout(dismissLoader, remaining);
+
+        // "Enter anyway" appears if progress stalls or some images won't load
+        skipBtn.addEventListener('click', finish);
+        const skipWatch = setInterval(() => {
+            if (finished) { clearInterval(skipWatch); return; }
+            if (failed.size || Date.now() - lastProgress > SKIP_AFTER) skipBtn.classList.add('show');
+        }, 1000);
+
+        render();
+        loadAll();
+    })();
+
+    // ── Loader widget: scalable wolfie.life window ──
+    // Renders the site at a fixed virtual viewport and scales it to the window,
+    // so resizing the window zooms the whole page rather than reflowing it.
+    (function initLoaderWidget() {
+        const widget = document.getElementById('loaderWidget');
+        if (!widget) return;
+        const frame    = widget.querySelector('iframe');
+        const body     = widget.querySelector('.lw-body');
+        const handle   = widget.querySelector('.lw-resize');
+        const collapse = widget.querySelector('[data-lw-collapse]');
+        const sizeBtns = widget.querySelectorAll('[data-lw-size]');
+
+        const SRC     = 'https://wolfie.life';
+        const PRESETS = { s: 280, m: 440, l: 680 };
+        const RATIO   = 0.625;          // default body height / width
+        const MIN_W = 200, MIN_H = 120;
+        const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+        // Narrow windows get a phone-width virtual viewport so text stays readable
+        const virtualWidth = w => (w <= 420 ? 480 : 1024);
+
+        const st = { w: 0, h: 0 };
+        function apply() {
+            const maxW = window.innerWidth - 24;
+            const maxH = window.innerHeight - 24 - 34; // minus header + margin
+            st.w = clamp(st.w, MIN_W, Math.max(MIN_W, maxW));
+            st.h = clamp(st.h, MIN_H, Math.max(MIN_H, maxH));
+            const V = virtualWidth(st.w), scale = st.w / V;
+            widget.style.width = st.w + 'px';
+            body.style.height  = st.h + 'px';
+            frame.style.width  = V + 'px';
+            frame.style.height = (st.h / scale) + 'px';
+            frame.style.transform = 'scale(' + scale + ')';
         }
-        if (document.readyState === 'complete') {
-            tryDismiss();
-        } else {
-            window.addEventListener('load', tryDismiss, { once: true });
-            // Safety: dismiss at 5s no matter what
-            setTimeout(dismissLoader, 5000);
+        function setPreset(key) {
+            st.w = PRESETS[key];
+            st.h = Math.round(st.w * RATIO);
+            apply();
+            sizeBtns.forEach(b => b.classList.toggle('active', b.dataset.lwSize === key));
         }
+        sizeBtns.forEach(b => b.addEventListener('click', () => setPreset(b.dataset.lwSize)));
+
+        collapse.addEventListener('click', () => {
+            const c = widget.classList.toggle('lw-collapsed');
+            collapse.setAttribute('aria-expanded', String(!c));
+            collapse.textContent = c ? '+' : '–';
+            collapse.title = c ? 'Expand' : 'Collapse';
+        });
+
+        // Free-form resize from the top-left corner (widget is anchored bottom-right)
+        let drag = null;
+        handle.addEventListener('pointerdown', e => {
+            drag = { x: e.clientX, y: e.clientY, w: st.w, h: st.h };
+            handle.setPointerCapture(e.pointerId);
+            widget.classList.add('lw-dragging');
+            sizeBtns.forEach(b => b.classList.remove('active'));
+            e.preventDefault();
+        });
+        handle.addEventListener('pointermove', e => {
+            if (!drag) return;
+            st.w = drag.w + (drag.x - e.clientX);
+            st.h = drag.h + (drag.y - e.clientY);
+            apply();
+        });
+        const endDrag = () => { drag = null; widget.classList.remove('lw-dragging'); };
+        handle.addEventListener('pointerup', endDrag);
+        handle.addEventListener('pointercancel', endDrag);
+
+        window.addEventListener('resize', apply);
+
+        setPreset(window.innerWidth < 640 ? 's' : 'm');
+        frame.src = SRC;
     })();
 
     cursor.element = Utils.$('#cursor');
