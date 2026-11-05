@@ -23,7 +23,10 @@
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPGRlZnM+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImhnIiBjeD0iNDIlIiBjeT0iMzUlIiByPSI2NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjBiODQwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTUlIiBzdG9wLWNvbG9yPSIjZDQ4ODBhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhiNGEwMCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9InNvZnQiPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgaW49IlNvdXJjZUFscGhhIiBzdGREZXZpYXRpb249IjAuNSIgcmVzdWx0PSJibHVyIi8+CiAgICAgIDxmZUNvbXBvc2l0ZSBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJibHVyIiBvcGVyYXRvcj0ib3ZlciIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgogIDwhLS0gSGVhcnQgcGF0aCBjZW50ZXJlZCBpbiAzMngzMiwgc2xpZ2h0bHkgb3JnYW5pYyBwcm9wb3J0aW9ucyAtLT4KICA8cGF0aCBmaWx0ZXI9InVybCgjc29mdCkiCiAgICBkPSJNMTYgMjcuMiBDMTYgMjcuMiA0IDE5LjIgNCAxMS42IEM0IDcuNCA3LjIgNCAxMS4yIDQgQzEzLjQgNCAxNS4yIDUuMiAxNiA2LjIgQzE2LjggNS4yIDE4LjYgNCAyMC44IDQgQzI0LjggNCAyOCA3LjQgMjggMTEuNiBDMjggMTkuMiAxNiAyNy4yIDE2IDI3LjJaIgogICAgZmlsbD0idXJsKCNoZykiCiAgLz4KPC9zdmc+" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://i.ibb.co" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
     <style>
 /* ===================================
    CSS VARIABLES & THEMES
@@ -3473,8 +3476,8 @@ body.compose-mode { padding-bottom: 0; }
 <body class="theme-newspaper"><!-- default -->
     <!-- ════ PAGE LOADER ════ -->
     <div id="pageLoader">
-        <video src="https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/soferocious.mp4"
-               muted autoplay loop playsinline preload="auto" aria-hidden="true"></video>
+        <video src="https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/soferocious.mp4"
+               muted autoplay loop playsinline preload="metadata" aria-hidden="true"></video>
         <div class="loader-overlay">
             <span class="loader-paw">🐾</span>
             <span class="loader-wordmark">Wolfgang</span>
@@ -3841,7 +3844,7 @@ body.compose-mode { padding-bottom: 0; }
         <div class="parallax-container">
             <div id="imageLayer" class="image-layer">
                 <div id="hoverImage" class="hover-image" role="tooltip" aria-hidden="true">
-                    <img src="" alt="" id="hoverImageImg" loading="lazy">
+                    <img src="" alt="" id="hoverImageImg" decoding="async" fetchpriority="high">
                     <video id="hoverImageVideo" muted autoplay loop playsinline preload="none"></video>
                 </div>
             </div>
@@ -3997,119 +4000,119 @@ let composeActive = false; // module-level flag so highlightSentence can read it
 const chapters = [];
 
 const imageMap = {
-    'road warrior': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgang000.avif',
-    'haircuts': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mohawk.avif',
-    'icecream1': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/theabsolutecutestthingihaveeverseen.avif',
-    'roadworth': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/joyful.avif',
-    'brave leg': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/theveryfirstofclassicwolfgang.avif',
-    'slyd': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/sleepspiral.mp4',
-    'Reald': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/park123.avif',
-    'REALD': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sothisiswolfgang.avif',
+    'road warrior': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgang000.avif',
+    'haircuts': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mohawk.avif',
+    'icecream1': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/theabsolutecutestthingihaveeverseen.avif',
+    'roadworth': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/joyful.avif',
+    'brave leg': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/theveryfirstofclassicwolfgang.avif',
+    'slyd': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/sleepspiral.mp4',
+    'Reald': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/park123.avif',
+    'REALD': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sothisiswolfgang.avif',
 
-    'This feels nice': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/nownamedgivenanappropriatemohawk.avif',
-    'Nighty-nite.': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/atthismomentidecidedhewasmine.avif',
+    'This feels nice': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/nownamedgivenanappropriatemohawk.avif',
+    'Nighty-nite.': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/atthismomentidecidedhewasmine.avif',
 
 
-    'elephant': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/elephantbywolfgang.avif',
+    'elephant': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/elephantbywolfgang.avif',
 
     'Meet Wolfgang': 'https://github.com/ZACKGORT/ifimaybefrank/raw/refs/heads/main/mp4/Ohmmmm.mp4',
-    '"Sweet Wolfgang"': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/icecream45678.avif',
-    'as his name': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sowolfgangdiscoveredpupcupsatprettymucheverysheetz.avif',
-    'Wolfie for short': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/thislittledudeexudedsomuchconfidence.avif',
-    '"Wolf" by calling': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgang00.avif',
-    'Woofie-boo': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/whereiswolfgang.avif',
-    'but a name worth becoming': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/delicious.avif',
-    'Chronicles of Wolfgang': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgang000.avif',
+    '"Sweet Wolfgang"': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/icecream45678.avif',
+    'as his name': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sowolfgangdiscoveredpupcupsatprettymucheverysheetz.avif',
+    'Wolfie for short': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/thislittledudeexudedsomuchconfidence.avif',
+    '"Wolf" by calling': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgang00.avif',
+    'Woofie-boo': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/whereiswolfgang.avif',
+    'but a name worth becoming': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/delicious.avif',
+    'Chronicles of Wolfgang': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgang000.avif',
 
-    'hero': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/superhero.avif',
-    'talks of bravery': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/braveboy.avif',
+    'hero': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/superhero.avif',
+    'talks of bravery': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/braveboy.avif',
     'Of fortitude': 'https://i.ibb.co/twP8m5wP/buildingburgerking.webp',
-    'Of rebellion': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/curbyourdog.avif',
-    'tale told': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/happierinnewyork.avif',
-    'inviting hope': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/surviorandthriverfullcolor.avif',
+    'Of rebellion': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/curbyourdog.avif',
+    'tale told': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/happierinnewyork.avif',
+    'inviting hope': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/surviorandthriverfullcolor.avif',
     'Wanderlust': 'https://github.com/ZACKGORT/ifimaybefrank/raw/refs/heads/main/mp4/Worldviewwalkieswithwolfgang.mp4',
-    'untold woes': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/oneofwolfgangsfavoriteplaces.avif',
-    'avoidance': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/fallinginlove1.avif',
+    'untold woes': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/oneofwolfgangsfavoriteplaces.avif',
+    'avoidance': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/fallinginlove1.avif',
     'never again, pal': 'https://i.ibb.co/YBQ5pvfW/fellinlove1.jpg',
-    'pure joy': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sweetestwolfgang.avif',
-    'resolve': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/xlnexttimeplease.avif',
-    'reticence': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sowolfiehatedtherain.avif',
-    'reflection': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/itshisworld.avif',
-    'Amongst those times': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/happyboy.avif',
-    'moments inbetween': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/happyboy.avif',
-    'adventure': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/assorgrasslass.avif',
-    'unique': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgangsfinestwork.avif',
-    'situations': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgangsfinestworkmoment.avif',
+    'pure joy': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sweetestwolfgang.avif',
+    'resolve': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/xlnexttimeplease.avif',
+    'reticence': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sowolfiehatedtherain.avif',
+    'reflection': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/itshisworld.avif',
+    'Amongst those times': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/happyboy.avif',
+    'moments inbetween': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/happyboy.avif',
+    'adventure': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/assorgrasslass.avif',
+    'unique': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgangsfinestwork.avif',
+    'situations': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgangsfinestworkmoment.avif',
 
-    'more of none': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/loveinastoria.avif',
+    'more of none': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/loveinastoria.avif',
 
-    'lost and alone': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/lostinqueens.avif',
-    'similar soul': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgangownsallofmyhoodies.avif',
-    'left without care': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/newtothis.avif',
+    'lost and alone': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/lostinqueens.avif',
+    'similar soul': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgangownsallofmyhoodies.avif',
+    'left without care': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/newtothis.avif',
 
-    'You were hungry': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/whenyouletastrangerintoyourhomeandtheygoforyourfridge.avif',
-    'to trust': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/theveryfirstofclassicwolfgang.avif',
-    'You longingly looked for a lap': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/traininghumanonmyfavoritethingtodoperiod.avif',
-    'someone to understand': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/socks1.avif',
-    'think of you': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/socks1.avif',
-    'try to': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/socks2.avif',
-    'For someone to ask': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/newtothis.avif',
-    'For someone to act': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mysweetpumpkin.avif',
-    'For someone to give': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/allstitchedup.avif',
+    'You were hungry': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/whenyouletastrangerintoyourhomeandtheygoforyourfridge.avif',
+    'to trust': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/theveryfirstofclassicwolfgang.avif',
+    'You longingly looked for a lap': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/traininghumanonmyfavoritethingtodoperiod.avif',
+    'someone to understand': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/socks1.avif',
+    'think of you': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/socks1.avif',
+    'try to': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/socks2.avif',
+    'For someone to ask': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/newtothis.avif',
+    'For someone to act': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mysweetpumpkin.avif',
+    'For someone to give': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/allstitchedup.avif',
     'hand': 'https://github.com/ZACKGORT/ifimaybefrank/raw/refs/heads/main/mp4/leglift001.mp4',
 
-    'new dad': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/heydaddy.avif',
+    'new dad': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/heydaddy.avif',
 
-    'belong': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/stinkyboy.mp4',
-    'know without notice': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/welcomehomebuddy.mp4',
-    'found home': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/Latenightstroll.mp4',
-    'you got your mojo back': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/Cityboi.mp4',
+    'belong': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/stinkyboy.mp4',
+    'know without notice': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/welcomehomebuddy.mp4',
+    'found home': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/Latenightstroll.mp4',
+    'you got your mojo back': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/Cityboi.mp4',
     'you have complete agency': 'https://github.com/ZACKGORT/ifimaybefrank/raw/refs/heads/main/mp4/happywalks.mp4',
-    'amongst': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/longislandwalks.mp4',
-    'New lease — no leash': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/Leashlesslove.mp4',
-    'You decide': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/wolfgangfearlessbridgecrosser.mp4',
-    'true New Yorker': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/Earlydayswalkpostsurgeryneverneededaleash.mp4',
-    'happy walks': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/happywalks.mp4',
-    'loathe a lazy walk': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/lazywalkieswithwolfgang.mp4',
-    'while windy walks were wild': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/windyboy.mp4',
-    'best walks': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/anesthesia.mp4',
+    'amongst': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/longislandwalks.mp4',
+    'New lease — no leash': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/Leashlesslove.mp4',
+    'You decide': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/wolfgangfearlessbridgecrosser.mp4',
+    'true New Yorker': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/Earlydayswalkpostsurgeryneverneededaleash.mp4',
+    'happy walks': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/happywalks.mp4',
+    'loathe a lazy walk': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/lazywalkieswithwolfgang.mp4',
+    'while windy walks were wild': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/windyboy.mp4',
+    'best walks': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/anesthesia.mp4',
 
-    'calories are real': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/comfort1.avif',
-    'Dad just made dinner': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/comfort2.avif',
-    'Dinner was good': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/homemademeals.avif',
-    'Goodnight.': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/whendadworksfromhomesoyougettheenviablewindowofficewithfreemassuese.avif',
+    'calories are real': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/comfort1.avif',
+    'Dad just made dinner': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/comfort2.avif',
+    'Dinner was good': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/homemademeals.avif',
+    'Goodnight.': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/whendadworksfromhomesoyougettheenviablewindowofficewithfreemassuese.avif',
 
-    'Bag-buddy': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/Newlife.mp4',
-    'Works over WOOFI': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/hisfavoritecafe.avif',
-    'Works under WOOFI': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/hisfavoritecafe.avif',
-    'headphone': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/metallicafanprobably.avif',
+    'Bag-buddy': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/Newlife.mp4',
+    'Works over WOOFI': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/hisfavoritecafe.avif',
+    'Works under WOOFI': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/hisfavoritecafe.avif',
+    'headphone': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/metallicafanprobably.avif',
 
-    'near': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mydreamwastoownacafejustforwolfietohangoutin.avif',
+    'near': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mydreamwastoownacafejustforwolfietohangoutin.avif',
     'nearer': 'https://i.ibb.co/Z1FrMWch/closer.webp',
-    'nearest': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/lookiftheysayanythingiamheretokeepyouontask.avif',
+    'nearest': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/lookiftheysayanythingiamheretokeepyouontask.avif',
 
-    'astigmatism': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/owl.avif',
-    'broken lapdog': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/traininghumanonmyfavoritethingtodoperiod.avif',
-    'TLC': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/laplife.avif',
-    'much space': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mylittledonut.avif',
+    'astigmatism': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/owl.avif',
+    'broken lapdog': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/traininghumanonmyfavoritethingtodoperiod.avif',
+    'TLC': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/laplife.avif',
+    'much space': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mylittledonut.avif',
 
 
-    'is this the real life': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sowhatareyouupto.avif',
-    'is this just fantasy': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/floating.avif',
-    'caught in a landslide': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/sleepspiral.mp4',
-    'escape from reality': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/likereallyhatedtherain.avif',
-    'Look to the sky': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/intothevoid.avif',
+    'is this the real life': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sowhatareyouupto.avif',
+    'is this just fantasy': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/floating.avif',
+    'caught in a landslide': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/sleepspiral.mp4',
+    'escape from reality': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/likereallyhatedtherain.avif',
+    'Look to the sky': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/intothevoid.avif',
 
-    'So, this is new': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgangsfirsttimeinthejeep.avif',
-    'moved my bed': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mamaweremovingout.avif',   
-    'Dad moved my bed': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mamaweremovingout.avif', 
+    'So, this is new': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgangsfirsttimeinthejeep.avif',
+    'moved my bed': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mamaweremovingout.avif',   
+    'Dad moved my bed': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mamaweremovingout.avif', 
 
-    'teethies': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/lastsleepies.avif',
-    'we go pee-pee': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/curbyourdog.avif',
-    'we go sleepy': 'https://raw.githubusercontent.com/ZACKGORT/ifimaybefrank/main/mp4/Sleepingbeauty.mp4',
+    'teethies': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/lastsleepies.avif',
+    'we go pee-pee': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/curbyourdog.avif',
+    'we go sleepy': 'https://cdn.jsdelivr.net/gh/ZACKGORT/ifimaybefrank@main/mp4/Sleepingbeauty.mp4',
 
     'ferocious': 'https://github.com/ZACKGORT/ifimaybefrank/raw/refs/heads/main/mp4/soferocious.mp4',
-    'My sweet, Sweet Wolfgang': 'https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/flower.avif',
+    'My sweet, Sweet Wolfgang': 'https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/flower.avif',
 
     
 };
@@ -5068,16 +5071,76 @@ function wrapImageTriggers(text) {
     return wrapped;
 }
 
+// ===================================
+// IMAGE CACHE (shared by hover UI, flow mode, grid)
+// ===================================
+const imageCache = new Map(); // url -> { img, done, ok }
+function isVideoUrl(url) { return /\.mp4(\?|$)/i.test(url || ''); }
+function getImage(url, priority) {
+    if (!url || isVideoUrl(url)) return null;
+    let entry = imageCache.get(url);
+    if (entry) return entry;
+    const img = new Image();
+    img.decoding = 'async';
+    if (priority) img.fetchPriority = priority;
+    if (url.indexOf('cdn.jsdelivr.net') !== -1) img.crossOrigin = 'anonymous'; // lets canvas grid reuse it
+    entry = { img, done: false, ok: false };
+    img.onload = () => { entry.done = true; entry.ok = true; };
+    img.onerror = () => { entry.done = true; entry.ok = false; };
+    img.src = url;
+    imageCache.set(url, entry);
+    return entry;
+}
+// Set src on an <img>; if bytes are already cached, decode before showing
+function assignImageSrc(el, url, onReady) {
+    const entry = getImage(url, 'high');
+    const finish = () => { el.onload = el.onerror = null; onReady(); };
+    if (entry && entry.done && entry.ok) {
+        if (el.src !== url) el.src = url;
+        if (el.decode) el.decode().then(finish, finish); else finish();
+    } else {
+        el.onload = finish; el.onerror = finish;
+        if (el.src !== url) el.src = url; else if (el.complete) finish();
+    }
+}
+function sentenceImageUrl(idx) {
+    const el = state.allSentenceElements[idx];
+    const t = el && el.querySelector && el.querySelector('.image-trigger');
+    return t ? t.getAttribute('data-image') : null;
+}
+let lastPreloadIdx = -999;
+function preloadWindow(idx, radius = 3) {
+    if (Math.abs(idx - lastPreloadIdx) < 1) return;
+    lastPreloadIdx = idx;
+    const n = state.allSentenceElements.length;
+    for (let i = Math.max(0, idx - radius); i <= Math.min(n - 1, idx + radius); i++) {
+        const u = sentenceImageUrl(i);
+        if (u) getImage(u, 'low');
+    }
+}
+let idleQueue = [], idleRunning = false;
+function idleDrip(urls) {
+    idleQueue.push(...urls.filter(u => !isVideoUrl(u) && !imageCache.has(u)));
+    if (idleRunning) return;
+    idleRunning = true;
+    const ric = window.requestIdleCallback || (cb => setTimeout(() => cb({ timeRemaining: () => 8 }), 200));
+    const tick = () => {
+        let n = 0;
+        while (idleQueue.length && n < 2) { const u = idleQueue.shift(); if (!imageCache.has(u)) { getImage(u, 'low'); n++; } }
+        if (idleQueue.length) ric(tick, { timeout: 2000 }); else idleRunning = false;
+    };
+    ric(tick, { timeout: 2000 });
+}
 function preloadImages() {
-    const urls = [...new Set(Object.values(imageMap))];
-    urls.forEach(url => {
-        if (!url.match(/\.mp4(\?|$)/i)) { const img = new Image(); img.src = url; }
-    });
+    const urls = [...new Set(Object.values(imageMap))].filter(u => !isVideoUrl(u));
+    urls.slice(0, 2).forEach(u => getImage(u, 'high'));
+    idleDrip(urls.slice(2));
 }
 
 function isVideo(url) { return url && url.match(/\.mp4(\?|$)/i); }
 
 function showImage(imageUrl, triggerElement) {
+    if (!isVideo(imageUrl)) getImage(imageUrl, 'high'); // start network now, not after hover delay
     cursor.currentImageElement = triggerElement;
     state.imageActive = true;
     state.currentTriggerRect = triggerElement.getBoundingClientRect();
@@ -5101,10 +5164,8 @@ function showImage(imageUrl, triggerElement) {
                 hoverImageVideo.play().catch(() => {});
                 hoverImage.classList.add('active');
             } else {
-                thumb.onload = () => cursor.element.classList.add('thumb-active');
-                thumb.onerror = () => cursor.element.classList.add('thumb-active');
-                if (thumb.src !== imageUrl) thumb.src = imageUrl;
-                else cursor.element.classList.add('thumb-active');
+                if (thumb.src === imageUrl) cursor.element.classList.add('thumb-active');
+                else assignImageSrc(thumb, imageUrl, () => cursor.element.classList.add('thumb-active'));
             }
         }, CONFIG.IMAGE_HOVER_DELAY);
     } else {
@@ -5125,9 +5186,7 @@ function showImage(imageUrl, triggerElement) {
                 hoverImageVideo.style.display = 'none';
                 hoverImageVideo.pause();
                 hoverImageVideo.src = '';
-                hoverImageImg.onload = () => hoverImage.classList.add('active');
-                hoverImageImg.onerror = () => hoverImage.classList.add('active');
-                hoverImageImg.src = imageUrl;
+                assignImageSrc(hoverImageImg, imageUrl, () => hoverImage.classList.add('active'));
             }
         }, CONFIG.IMAGE_HOVER_DELAY);
     }
@@ -5239,6 +5298,7 @@ function highlightSentence(index, dir = 1) {
     sentence.classList.add('active');
     sentence.classList.remove('dimmed');
     sentence.setAttribute('aria-current', 'true');
+    preloadWindow(index);
 
     // Announce to screen readers
     const announcer = document.getElementById('srAnnouncer');
@@ -5631,8 +5691,7 @@ const flowMode = (() => {
         if (!trigger) return;
         const url = trigger.getAttribute('data-image');
         if (!url || url.match(/\.mp4(\?|$)/i)) return; // skip video, nothing to preload
-        const img = new Image();
-        img.src = url;
+        getImage(url, 'low');
     }
 
     function advance() {
@@ -5952,6 +6011,14 @@ const _GRID = (function() {
     function loadImg(src) {
         if (loaded.has(src)) return;
         loaded.set(src, null);
+        const shared = src.indexOf('cdn.jsdelivr.net') !== -1 ? getImage(src, 'low') : null;
+        if (shared) {
+            const img = shared.img;
+            const settle = () => loaded.set(src, shared.ok ? img : false);
+            if (shared.done) settle();
+            else { const a = img.onload, b = img.onerror; img.onload = () => { a && a(); settle(); }; img.onerror = () => { b && b(); settle(); }; }
+            return;
+        }
         const img = new Image();
         img.crossOrigin = 'anonymous';
         img.onload  = () => loaded.set(src, img);
@@ -6228,41 +6295,41 @@ const _GRID = (function() {
             items.push({ src: g.url, label: g.text || '', sentenceIdx: g.index });
         });
         [
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgang000.avif','road warrior'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mohawk.avif','mohawk'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/joyful.avif','joyful'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/theveryfirstofclassicwolfgang.avif','brave leg'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sothisiswolfgang.avif','this is wolfgang'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/nownamedgivenanappropriatemohawk.avif','mohawk reveal'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/atthismomentidecidedhewasmine.avif','decided'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/elephantbywolfgang.avif','elephant'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/icecream45678.avif','ice cream'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sowolfgangdiscoveredpupcupsatprettymucheverysheetz.avif','pup cup'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/thislittledudeexudedsomuchconfidence.avif','confidence'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgang00.avif','wolf'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/whereiswolfgang.avif','woofie-boo'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/delicious.avif','delicious'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/braveboy.avif','bravery'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgang000.avif','road warrior'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mohawk.avif','mohawk'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/joyful.avif','joyful'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/theveryfirstofclassicwolfgang.avif','brave leg'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sothisiswolfgang.avif','this is wolfgang'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/nownamedgivenanappropriatemohawk.avif','mohawk reveal'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/atthismomentidecidedhewasmine.avif','decided'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/elephantbywolfgang.avif','elephant'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/icecream45678.avif','ice cream'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sowolfgangdiscoveredpupcupsatprettymucheverysheetz.avif','pup cup'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/thislittledudeexudedsomuchconfidence.avif','confidence'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgang00.avif','wolf'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/whereiswolfgang.avif','woofie-boo'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/delicious.avif','delicious'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/braveboy.avif','bravery'],
             ['https://i.ibb.co/twP8m5wP/buildingburgerking.webp','fortitude'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/curbyourdog.avif','rebellion'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/happierinnewyork.avif','new york'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/oneofwolfgangsfavoriteplaces.avif','favorite place'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sweetestwolfgang.avif','pure joy'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/sowolfiehatedtherain.avif','rain'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/itshisworld.avif','his world'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/assorgrasslass.avif','adventure'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/loveinastoria.avif','astoria'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/newtothis.avif','new to this'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/traininghumanonmyfavoritethingtodoperiod.avif','lap'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mydreamwastoownacafejustforwolfietohangoutin.avif','cafe dream'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/lookiftheysayanythingiamheretokeepyouontask.avif','supervision'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/mylittledonut.avif','donut'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/wolfgangsfirsttimeinthejeep.avif','jeep'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/lastsleepies.avif','last sleepies'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/comfort1.avif','comfort'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/comfort2.avif','comfort ii'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/homemademeals.avif','dinner'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/hisfavoritecafe.avif','cafe'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/curbyourdog.avif','rebellion'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/happierinnewyork.avif','new york'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/oneofwolfgangsfavoriteplaces.avif','favorite place'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sweetestwolfgang.avif','pure joy'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/sowolfiehatedtherain.avif','rain'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/itshisworld.avif','his world'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/assorgrasslass.avif','adventure'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/loveinastoria.avif','astoria'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/newtothis.avif','new to this'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/traininghumanonmyfavoritethingtodoperiod.avif','lap'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mydreamwastoownacafejustforwolfietohangoutin.avif','cafe dream'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/lookiftheysayanythingiamheretokeepyouontask.avif','supervision'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/mylittledonut.avif','donut'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/wolfgangsfirsttimeinthejeep.avif','jeep'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/lastsleepies.avif','last sleepies'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/comfort1.avif','comfort'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/comfort2.avif','comfort ii'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/homemademeals.avif','dinner'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/hisfavoritecafe.avif','cafe'],
             ['https://i.ibb.co/8Wbt6Jw/uhmtotallyfellasleepwithselfiemodereadyohlookathispawsomg.webp','selfie mode'],
             ['https://i.ibb.co/GvH63fQ8/thisthisisthevalidationiseek.webp','validation'],
             ['https://i.ibb.co/C3GsbwmT/thegoattheking.webp','the goat'],
@@ -6287,7 +6354,7 @@ const _GRID = (function() {
             ['https://i.ibb.co/r2ynCVfQ/homeiswhereyourest.webp','home'],
             ['https://i.ibb.co/Ldmrtb7t/hislittleblacklips.webp','black lips'],
             ['https://i.ibb.co/0RLXVg2g/hidaddy.webp','hi daddy'],
-            ['https://raw.githubusercontent.com/ZACKGORT/never/main/images/avif/heydaddy.avif','hey daddy'],
+            ['https://cdn.jsdelivr.net/gh/ZACKGORT/never@main/images/avif/heydaddy.avif','hey daddy'],
             ['https://i.ibb.co/8L68BJFv/guardian.webp','guardian'],
             ['https://i.ibb.co/7NBXqNfS/foreman.webp','foreman'],
             ['https://i.ibb.co/YJbXh7S/fluffy.webp','fluffy'],
@@ -8561,7 +8628,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // The existing delegated listeners on streamEl already handle .image-trigger via bubbling
             // Just make sure preloadImages picks up new ones
             const newUrls = Object.values(compose.liveImageMap);
-            newUrls.forEach(url => { if (!url.match(/\.mp4(\?|$)/i)) { const img = new Image(); img.src = url; } });
+            idleDrip(newUrls);
         }
 
         // ── Double-click existing sentences to edit in compose mode ──
